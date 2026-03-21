@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siva Narasimha Abhinav D | Portfolio</title>
+    <meta name="description"
+        content="Personal Portfolio of Siva Narasimha Abhinav D - Computer Science Student (AI & ML) focused on full-stack development and machine learning.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <!-- Global Animated Background -->
+    <div class="global-bg">
+        <div class="bg-blob bg-blob-1"></div>
+        <div class="bg-blob bg-blob-2"></div>
+        <div class="bg-blob bg-blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Abhinav<span>.dev</span></a>
+            <div class="menu-btn"><i class="fas fa-bars"></i></div>
+            <div class="theme-toggle" id="theme-btn" aria-label="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <div class="hero-image reveal-left">
+                <div class="blob-wrapper">
+                    <div class="shape blob-1"></div>
+                    <div class="shape blob-2"></div>
+                    <div class="hero-avatar">
+                        <img src="profile.jpg" alt="Siva Narasimha Abhinav D" class="profile-img">
+                    </div>
+                </div>
+            </div>
+            <div class="hero-text reveal-right">
+                <p class="greeting">Hi, I'm</p>
+                <h1 class="name">Siva Narasimha Abhinav D</h1>
+                <h2 class="role typing-text">Computer Science Student (AI & ML)</h2>
+                <p class="tagline">
+                    Bridging the gap between conceptual learning and real-world execution. Passionate about software
+                    engineering, data science, and creating scalable solutions that make an impact. Looking for
+                    challenging opportunities to apply my technical skills.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="abhinav_cv.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-download"></i>
+                        Resume</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/abhinavdsn0905" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abhinav-dsn" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:abhinav.160905@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title reveal">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <h3>My Background</h3>
+                    <p>
+                        I am currently pursuing a <strong>B.Tech in Computer Science and Engineering (AI & ML)</strong>
+                        at Lovely Professional University with a current CGPA of 7.64. I have a strong foundation in
+                        core computer science subjects, including Data Structures, Algorithms, and Object-Oriented
+                        Programming.
+                    </p>
+                    <p>
+                        My interests span across <strong>Machine Learning, Full-Stack Web Development, and
+                            Cybersecurity</strong>. I possess a strong learning mindset aimed at continuous improvement
+                        and exploring cutting-edge technologies.
+                    </p>
+                    <div class="about-pills">
+                        <span class="pill">Machine Learning</span>
+                        <span class="pill">Full-Stack Development</span>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <h4 class="counter" data-target="6">0</h4>
+                            <p>Major Projects</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4 class="counter" data-target="5">0</h4>
+                            <p>Certifications</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>7.64 / 10 <span
+                                    style="font-size: 1rem; opacity: 0.8; font-weight: 500;">(Ongoing)</span></h4>
+                            <p>CGPA</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End about-content -->
+        </div> <!-- End container -->
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section bg-alt">
+        <div class="container">
+            <h2 class="section-title reveal">My <span>Education</span></h2>
+            <div class="education-content">
+                <div class="education-timeline reveal-up">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Aug 2023 - Present</div>
+                            <h4>B.Tech in CSE (AI & ML)</h4>
+                            <p>Lovely Professional University | Phagwara, Punjab</p>
+                            <span class="grade">CGPA: 7.64 / 10 (Ongoing)</span>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Sep 2021 - May 2023</div>
+                            <h4>Intermediate | MPC</h4>
+                            <p>Narayana Junior College | Proddatur, AP</p>
+                            <span class="grade">Percentage: 95.8%</span>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">Jun 2020 - May 2021</div>
+                            <h4>10th Standard (SSC)</h4>
+                            <p>Gautam High School | Proddatur, AP</p>
+                            <span class="grade">Percentage: 100.0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End education-content -->
+        </div> <!-- End container -->
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section bg-alt">
+        <div class="container">
+            <h2 class="section-title reveal"><span>Skills</span></h2>
+            <div class="skills-grid">
+
+                <div class="skill-category reveal">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python" class="skill-icon"> Python</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                alt="C++" class="skill-icon"> C++</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"
+                                class="skill-icon"> C</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="SQL" class="skill-icon"> SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal" style="transition-delay: 100ms;">
+                    <div class="skill-header">
+                        <i class="fas fa-globe"></i>
+                        <h3>Web Technologies</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML" class="skill-icon"> HTML</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS" class="skill-icon"> CSS</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JavaScript" class="skill-icon"> JavaScript</span>
+                        <span class="pill"><i class="fas fa-server skill-icon-fa"></i> REST API</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal" style="transition-delay: 200ms;">
+                    <div class="skill-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Frameworks</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                                alt="Django" class="skill-icon"> Django</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg"
+                                alt="Flask" class="skill-icon"> Flask</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                alt="Bootstrap" class="skill-icon"> Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal" style="transition-delay: 300ms;">
+                    <div class="skill-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools & Databases</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                alt="MySQL" class="skill-icon"> MySQL</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+                                class="skill-icon"> Git</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub" class="skill-icon"> GitHub</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+                                alt="SQLite" class="skill-icon"> SQLite</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                                alt="Postman" class="skill-icon"> Postman</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                alt="VS Code" class="skill-icon"> VS Code</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                alt="Linux" class="skill-icon"> Linux</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal" style="transition-delay: 400ms;">
+                    <div class="skill-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Libraries & Core</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
+                                alt="NumPy" class="skill-icon"> NumPy</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
+                                alt="Pandas" class="skill-icon"> Pandas</span>
+                        <span class="pill"><i class="fas fa-brain skill-icon-fa"></i> Scikit-learn</span>
+                        <span class="pill"><i class="fas fa-chart-line skill-icon-fa"></i> Matplotlib</span>
+                        <span class="pill"><i class="fas fa-chart-bar skill-icon-fa"></i> Seaborn</span>
+                        <span class="pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
+                                alt="OpenCV" class="skill-icon"> OpenCV</span>
+                        <span class="pill"><i class="fas fa-project-diagram skill-icon-fa"></i> DSA</span>
+                        <span class="pill"><i class="fas fa-cubes skill-icon-fa"></i> OOPs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal" style="transition-delay: 500ms;">
+                    <div class="skill-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Soft Skills</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="pill"><i class="fas fa-clock skill-icon-fa"></i> Time Management</span>
+                        <span class="pill"><i class="fas fa-chart-pie skill-icon-fa"></i> Analytical Reasoning</span>
+                        <span class="pill"><i class="fas fa-lightbulb skill-icon-fa"></i> Critical Thinking</span>
+                        <span class="pill"><i class="fas fa-tasks skill-icon-fa"></i> Task Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+            <p class="section-subtitle reveal">Showcasing my technical problem-solving and software engineering
+                capabilities.</p>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal border-blue">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>RailConnect</h3>
+                            <span class="date-badge">Feb 2026</span>
+                        </div>
+                        <p class="project-tagline">Smart Train Reservation System</p>
+                        <ul class="project-features">
+                            <li>Developed a full-stack web app for searching trains, booking tickets, and live seat
+                                availability.</li>
+                            <li>Designed a normalized schema covering trains, routes, bookings, and inventory using
+                                Django ORM.</li>
+                            <li>Implemented dynamic pricing, route validation, and auto-generated PNR codes.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span><span>Django</span><span>MySQL</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal border-blue" style="transition-delay: 100ms;">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>MENZONE</h3>
+                            <span class="date-badge">Dec 2025</span>
+                        </div>
+                        <p class="project-tagline">E-Commerce Web Application</p>
+                        <ul class="project-features">
+                            <li>Engineered a full-stack platform for men's fashion with cart management and end-to-end
+                                checkout.</li>
+                            <li>Implemented authentication with Email OTP verification and session-based login.</li>
+                            <li>Structured normalized relational schema with custom admin dashboard for CRUD operations.
+                            </li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span><span>Django</span><span>SMTP</span><span>MySQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal border-green" style="transition-delay: 200ms;">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Route Optimizer</h3>
+                            <span class="date-badge">Oct 2025</span>
+                        </div>
+                        <p class="project-tagline">ML-Based Delivery Optimization</p>
+                        <ul class="project-features">
+                            <li>Built a machine learning model to classify delivery routes supporting last-mile
+                                logistics decisions.</li>
+                            <li>Trained Logistic Regression, Random Forest, and SVM models; evaluated via ROC-AUC
+                                scores.</li>
+                            <li>Computed Haversine-based distance features from GPS coordinates to improve input
+                                quality.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>NumPy</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal border-amber">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Mental Health Check-in Simulator</h3>
+                            <span class="date-badge">Aug 2025</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Deployed a modular C++ application using OOP to deliver personalized mood-based
+                                recommendations.</li>
+                            <li>Leveraged randomization and string handling for Users, Mood Trackers, and Calming
+                                Exercises.</li>
+                            <li>Increased user engagement, enabling 200+ simulated users to complete checks with 32%
+                                higher retention.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>C++</span><span>OOPs</span><span>DSA</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card reveal border-purple" style="transition-delay: 100ms;">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Secure Authentication Module</h3>
+                            <span class="date-badge">Nov 2024</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Developed multi-factor authentication integrating password login and OTP via Telegram
+                                Bot.</li>
+                            <li>Implemented PBKDF2-HMAC-SHA256 password hashing and HMAC verification for robust
+                                security.</li>
+                            <li>Designed secure credential storage using SQLite, reducing unauthorized login attempts by
+                                85%.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>Python</span><span>SQLite</span><span>Telegram API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card reveal border-blue" style="transition-delay: 200ms;">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Recipe Generator</h3>
+                            <span class="date-badge">Oct 2023</span>
+                        </div>
+                        <p class="project-tagline">Plan-Eat-Repeat</p>
+                        <ul class="project-features">
+                            <li>Implemented the front-end layout using HTML and CSS for a visual meal-planning
+                                application.</li>
+                            <li>Integrated dynamic content ensuring JavaScript-generated recipes align with the layout.
+                            </li>
+                            <li>Increased usability allowing 120+ evaluators to generate plans with 22% quicker
+                                completion time.</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Certifications Section -->
+    <section id="certifications" class="certifications section bg-alt">
+        <div class="container">
+            <h2 class="section-title reveal">Training & <span>Certifications</span></h2>
+
+            <div class="training-banner reveal">
+                <div class="training-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="training-info">
+                    <h3>Data Structures and Algorithms using C++</h3>
+                    <p class="provider">Cipher Schools (Edtech Company) | Jul 2025</p>
+                    <ul>
+                        <li>Completed comprehensive <strong>60+ hour intensive bootcamp</strong> covering advanced DSA
+                            concepts including Trees, Graphs, Hashing, and Heaps.</li>
+                        <li>Mastered algorithmic paradigms: Recursion, Backtracking, Greedy Algorithms, Dynamic
+                            Programming, and Two-Pointer Techniques.</li>
+                        <li>Demonstrated <strong>35% improvement</strong> in algorithmic accuracy and <strong>28%
+                                reduction</strong> in code execution time.</li>
+                    </ul>
+                    <a href="https://www.cipherschools.com/certificate/preview?id=6880d4867efd6d50907051be"
+                        class="btn btn-outline" style="margin-top: 1.5rem;" target="_blank"><i
+                            class="fas fa-external-link-alt"></i> View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card reveal">
+                    <i class="fas fa-brain cert-icon"></i>
+                    <h4>Master Generative AI</h4>
+                    <p>Infosys SpringBoard</p>
+                    <div style="margin-bottom: 1rem;"><span class="date">Aug 2025</span></div>
+                    <a href="https://drive.google.com/file/d/1Yd7ifyEPbZrS-3QVZt-R4jzmCwXTEJ4k/view" class="btn-sm"
+                        target="_blank"><i class="fas fa-external-link-alt"></i> View</a>
+                </div>
+                <div class="cert-card reveal" style="transition-delay: 100ms;">
+                    <i class="fas fa-network-wired cert-icon"></i>
+                    <h4>Computer Communications</h4>
+                    <p>Coursera</p>
+                    <div style="margin-bottom: 1rem;"><span class="date">Nov 2024</span></div>
+                    <a href="https://drive.google.com/file/d/1H1kqDkaM__yD98WTkI3GItDr9_556gA-/view" class="btn-sm"
+                        target="_blank"><i class="fas fa-external-link-alt"></i> View</a>
+                </div>
+                <div class="cert-card reveal" style="transition-delay: 200ms;">
+                    <i class="fab fa-python cert-icon"></i>
+                    <h4>Python</h4>
+                    <p>Cse Pathshala</p>
+                    <div style="margin-bottom: 1rem;"><span class="date">Mar 2024</span></div>
+                    <a href="https://drive.google.com/file/d/1TE18jPIkantsz3mM61C4U-ui-kt1u5JA/view" class="btn-sm"
+                        target="_blank"><i class="fas fa-external-link-alt"></i> View</a>
+                </div>
+                <div class="cert-card reveal" style="transition-delay: 300ms;">
+                    <i class="fas fa-laptop cert-icon"></i>
+                    <h4>Responsive Web Design</h4>
+                    <p>FreeCodeCamp</p>
+                    <div style="margin-bottom: 1rem;"><span class="date">Dec 2023</span></div>
+                    <a href="https://drive.google.com/file/d/14gYGBzOWcHo_swQH_WYMhYVJhGsmYaRN/view" class="btn-sm"
+                        target="_blank"><i class="fas fa-external-link-alt"></i> View</a>
+                </div>
+            </div>
+
+            <div class="hackathon-section reveal mt-5">
+                <h3>Extra-Curricular & Hackathons</h3>
+                <div class="hackathon-cards">
+                    <div class="hackathon-card">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <h4>Hackverse Hackathon</h4>
+                            <p>Attended the 24-Hour intensive team challenge.</p>
+                        </div>
+                    </div>
+                    <div class="hackathon-card">
+                        <i class="fab fa-hackerrank"></i>
+                        <div>
+                            <h4>HackerRank Excellence</h4>
+                            <p>Achieved Python badge on the HackerRank platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title reveal">Get In <span>Touch</span></h2>
+            <p class="section-subtitle reveal">Currently looking for placement opportunities and internships. Let's connect!</p>
+
+            <div class="contact-wrapper">
+                <div class="contact-info reveal-left">
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:abhinav.160905@gmail.com">abhinav.160905@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/abhinav-dsn"
+                                    target="_blank">linkedin.com/in/abhinav-dsn</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon-box"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/abhinavdsn0905" target="_blank">github.com/abhinavdsn0905</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="abhinav_cv.pdf" download class="btn btn-outline-white"
+                            style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Download Resume</a>
+                    </div>
+                </div>
+
+                <div class="work-together-card reveal-right">
+                    <h3>Open To</h3>
+                    <ul class="opportunities-list">
+                        <li><i class="fas fa-check-circle text-green"></i> Internships</li>
+                        <li><i class="fas fa-check-circle text-green"></i> Placement Opportunities</li>
+                        <li><i class="fas fa-check-circle text-green"></i> Freelance Projects</li>
+                        <li><i class="fas fa-check-circle text-green"></i> Open Source Collaboration</li>
+                    </ul>
+                    <a href="mailto:abhinav.160905@gmail.com" class="btn btn-primary w-100">Send Me an Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Siva Narasimha Abhinav D. Built with <i class="fas fa-heart text-accent"></i> & HTML/CSS/JS.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
