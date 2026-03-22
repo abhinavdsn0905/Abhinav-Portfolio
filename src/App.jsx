@@ -686,9 +686,6 @@ function Projects() {
                     <a href={p.github} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#fff', fontSize: '0.85rem', fontWeight: 900, textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '4px' }}>
                       <Github size={16} /> GitHub
                     </a>
-                    <a href={p.demo} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--primary)', fontSize: '0.85rem', fontWeight: 900, textTransform: 'uppercase', background: 'rgba(0,240,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '4px', border: '1px solid var(--primary)' }}>
-                      <ExternalLink size={16} /> [ LIVE.DEMO ]
-                    </a>
                   </div>
                 </div>
               </Tilt>
