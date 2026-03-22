@@ -814,15 +814,6 @@ function Training() {
 
 // ─── CONTACT ──────────────────────────────────────────────────────
 function Contact() {
-  const [copied, setCopied] = useState(false)
-
-  const handleCopy = (e) => {
-    e.preventDefault()
-    navigator.clipboard.writeText(PERSONAL.email)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   return (
     <section id="contact" className="section" style={{ paddingBottom: '8rem' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
@@ -856,9 +847,6 @@ function Contact() {
               </div>
 
               <div className="pop-out-extreme" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="#" onClick={handleCopy} className="btn-primary" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
-                  <Mail size={20} /> {copied ? '[ EMAIL COPIED ]' : 'Execute: SendEmail'}
-                </a>
                 <a href={PERSONAL.linkedin} target="_blank" className="btn-ghost" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
                   <Linkedin size={20} /> Node: LinkedIn
                 </a>
