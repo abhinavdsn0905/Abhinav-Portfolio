@@ -4,9 +4,41 @@ import Tilt from 'react-parallax-tilt'
 import {
   Github, Linkedin, Mail, Download, Globe, Layers, Brain,
   Menu, X, Zap, ArrowUpRight, Phone, Star, Cpu, Terminal,
-  Award, GraduationCap, MapPin, ExternalLink, FileText
+  Award, GraduationCap, MapPin, ExternalLink, FileText,
+  Sun, Moon
 } from 'lucide-react'
 import ThreeBackground from './components/ThreeBackground'
+
+// ─── THEME TOGGLE ────────────────────────────────────────────────────────────
+function ThemeToggle() {
+  const [isLight, setIsLight] = useState(false)
+
+  useEffect(() => {
+    const saved = localStorage.getItem('theme')
+    if (saved === 'light') {
+      setIsLight(true)
+      document.documentElement.classList.add('light-mode')
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const next = !isLight
+    setIsLight(next)
+    if (next) {
+      document.documentElement.classList.add('light-mode')
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.documentElement.classList.remove('light-mode')
+      localStorage.setItem('theme', 'dark')
+    }
+  }
+
+  return (
+    <button onClick={toggleTheme} className="btn-ghost social-icon-btn" style={{ width: '40px', height: '40px', padding: 0 }} title="Toggle Theme">
+      {isLight ? <Moon size={18} /> : <Sun size={18} />}
+    </button>
+  )
+}
 
 // ─── FULL CV DATA ────────────────────────────────────────────────────────
 const PERSONAL = {
@@ -226,12 +258,12 @@ function CyberBootScreen({ onComplete }) {
   }, [onComplete])
 
   return (
-    <div className={`boot-screen ${fading ? 'fade-out-boot' : ''}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '3rem', position: 'fixed', inset: 0, background: '#030303', zIndex: 9999 }}>
+    <div className={`boot-screen ${fading ? 'fade-out-boot' : ''}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '3rem', position: 'fixed', inset: 0, background: 'var(--dark-to-light-bg)', zIndex: 9999 }}>
 
       {/* Central Spinning Core */}
       <div style={{ position: 'relative', width: '220px', height: '220px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: 'conic-gradient(from 0deg, transparent 70%, var(--primary) 100%)', animation: 'spin 1.5s linear infinite' }} />
-        <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', background: '#030303' }} />
+        <div style={{ position: 'absolute', inset: '4px', borderRadius: '50%', background: 'var(--dark-to-light-bg)' }} />
         <div style={{ position: 'absolute', inset: '12px', borderRadius: '50%', border: '2px dashed rgba(0,255,255,0.4)', animation: 'spin 6s linear infinite reverse' }} />
 
         {/* Core Percentage */}
@@ -243,7 +275,7 @@ function CyberBootScreen({ onComplete }) {
       {/* Identity Text */}
       <div style={{ textAlign: 'center' }}>
         <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '4px', marginBottom: '1rem', animation: 'blink 2s infinite' }}>DECRYPTING IDENTITY</div>
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, color: '#fff', letterSpacing: '2px', margin: 0, height: '3.5rem' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, color: 'var(--text-pop)', letterSpacing: '2px', margin: 0, height: '3.5rem' }}>
           {text}<span style={{ color: 'var(--primary)', animation: 'blink 1s infinite' }}>_</span>
         </h1>
       </div>
@@ -309,14 +341,14 @@ function CyberSidePanels() {
 
       {/* Left Data Column - Holographic Angle */}
       <div className="side-panel-left" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '220px', opacity: 0.5, color: 'var(--primary)', fontFamily: 'monospace', fontSize: '0.8rem', transform: 'perspective(800px) rotateY(25deg)' }}>
-        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}>
+        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'var(--glass-card-inner)', backdropFilter: 'blur(4px)' }}>
           <div style={{ marginBottom: '0.5rem', fontWeight: 700, letterSpacing: '2px' }}>SYS.CORE // ACTIVE</div>
           <div style={{ height: '3px', background: 'rgba(0,255,255,0.2)', position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '100%', background: 'linear-gradient(90deg, transparent, var(--primary), transparent)', animation: 'radar-sweep 2s linear infinite' }} />
           </div>
         </div>
 
-        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}>
+        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'var(--glass-card-inner)', backdropFilter: 'blur(4px)' }}>
           <div style={{ marginBottom: '0.5rem', fontWeight: 700, letterSpacing: '2px' }}>NET.ROUTES</div>
           {hexData.map((hex, i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', borderBottom: '1px solid rgba(0,255,255,0.1)' }}>
@@ -336,7 +368,7 @@ function CyberSidePanels() {
       {/* Right Data Column - Holographic Angle */}
       <div className="side-panel-right" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '220px', opacity: 0.5, color: 'var(--primary)', fontFamily: 'monospace', fontSize: '0.8rem', textAlign: 'right', transform: 'perspective(800px) rotateY(-25deg)' }}>
 
-        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}>
+        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'var(--glass-card-inner)', backdropFilter: 'blur(4px)' }}>
           <div style={{ fontWeight: 700, letterSpacing: '2px' }}>OP.FREQ // 4.2GHz</div>
           {/* Vertical Equalizer Array */}
           <div style={{ display: 'flex', gap: '4px', height: '50px', justifyContent: 'flex-end', marginTop: '1rem', alignItems: 'flex-end' }}>
@@ -346,7 +378,7 @@ function CyberSidePanels() {
           </div>
         </div>
 
-        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)' }}>
+        <div style={{ padding: '1rem', border: '1px solid rgba(0,255,255,0.2)', background: 'var(--glass-card-inner)', backdropFilter: 'blur(4px)' }}>
           <div style={{ marginBottom: '1rem', fontWeight: 700, letterSpacing: '2px' }}>MEM.ALLOC MATRIX</div>
           {/* Hex grid structural block */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '6px' }}>
@@ -379,7 +411,7 @@ function Nav() {
   return (
     <nav style={{
       position: 'fixed', top: 0, left: 0, width: '100%', zIndex: 1000,
-      background: scrolled ? 'rgba(3,5,8,0.9)' : 'transparent',
+      background: scrolled ? 'var(--dark-to-light-bg)' : 'transparent',
       borderBottom: scrolled ? '1px solid rgba(0,240,255,0.2)' : '1px solid transparent',
       backdropFilter: 'blur(20px)',
       padding: scrolled ? '1rem 0' : '1.5rem 0', transition: 'all 0.3s'
@@ -390,6 +422,7 @@ function Nav() {
         </a>
         <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           {links.map(l => <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{'/' + l}</a>)}
+          <ThemeToggle />
           <a href="abhinav_cv.pdf" target="_blank" className="btn-primary" style={{ padding: '0.4rem 1.2rem', fontSize: '0.8rem' }}>[ RESUME ]</a>
         </div>
       </div>
@@ -450,13 +483,13 @@ function Hero() {
             Siva Narasimha Abhinav D
           </motion.div>
 
-          <motion.div variants={fadeUp} style={{ fontSize: 'clamp(1.02rem, 2.55vw, 1.53rem)', fontWeight: 700, color: '#fff', height: 42, marginBottom: '2.5rem', letterSpacing: '1px' }}>
+          <motion.div variants={fadeUp} style={{ fontSize: 'clamp(1.02rem, 2.55vw, 1.53rem)', fontWeight: 700, color: 'var(--text-pop)', height: 42, marginBottom: '2.5rem', letterSpacing: '1px' }}>
             <span className="gradient-text" style={{ fontFamily: 'monospace' }}>{typed}</span>
           </motion.div>
 
           <motion.div variants={fadeUp} className="btn-container" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
             <a href="#projects" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px' }}>View Projects</a>
-            <motion.a href="abhinav_cv.pdf" target="_blank" className="btn-ghost" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px', borderColor: 'var(--secondary)', color: '#fff', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(176,38,255,0.4)', background: 'rgba(176,38,255,0.1)' }} transition={{ duration: 0.2 }}>[ RESUME ]</motion.a>
+            <motion.a href="abhinav_cv.pdf" target="_blank" className="btn-ghost" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px', borderColor: 'var(--secondary)', color: 'var(--text-pop)', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(176,38,255,0.4)', background: 'rgba(176,38,255,0.1)' }} transition={{ duration: 0.2 }}>[ RESUME ]</motion.a>
           </motion.div>
 
           <motion.div variants={stagger(0.1)} className="social-btn-container" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginBottom: '4rem' }}>
@@ -522,7 +555,7 @@ function About() {
             <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={1000} transitionSpeed={1000}>
               <div className="glass-card">
                 <div className="pop-out">
-                  <motion.h3 variants={fadeUp} style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '1.5rem', color: '#fff', textTransform: 'uppercase', letterSpacing: '1px' }}>Who I Am</motion.h3>
+                  <motion.h3 variants={fadeUp} style={{ fontSize: '1.8rem', fontWeight: 900, marginBottom: '1.5rem', color: 'var(--text-pop)', textTransform: 'uppercase', letterSpacing: '1px' }}>Who I Am</motion.h3>
                   <motion.p variants={fadeUp} style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1.1rem', lineHeight: 1.8 }}>
                     I am <strong style={{ color: 'var(--primary)' }}>Siva Narasimha Abhinav D</strong>, a B.Tech Computer Science and Engineering (AI & ML) student at <strong style={{ color: 'var(--secondary)' }}>Lovely Professional University</strong>, Phagwara, Punjab, currently in my third year. I have a strong foundation in full-stack web development, machine learning. I have built 5 projects spanning intelligent web applications, ML-based optimization models tools — demonstrating my ability to translate academic knowledge into real-world solutions. I am passionate about building scalable, efficient, and impactful software. I am actively seeking internship and placement opportunities where I can contribute meaningfully, grow professionally, and work alongside experienced engineers on challenging problems.
                   </motion.p>
@@ -536,7 +569,7 @@ function About() {
                   ].map((r, i) => (
                     <div key={r.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                       <div style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: 800, fontFamily: 'monospace', letterSpacing: '1px' }}>{r.id}</div>
-                      <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem' }}>{r.val}</div>
+                      <div style={{ color: 'var(--text-pop)', fontWeight: 700, fontSize: '0.9rem' }}>{r.val}</div>
                     </div>
                   ))}
                 </motion.div>
@@ -571,7 +604,7 @@ function Skills() {
                     <div style={{ width: 44, height: 44, borderRadius: '4px', background: `${s.color}22`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${s.color}44` }}>
                       <s.icon size={22} color={s.color} style={{ filter: `drop-shadow(0 0 8px ${s.color})` }} />
                     </div>
-                    <h3 style={{ color: '#fff', fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{s.category}</h3>
+                    <h3 style={{ color: 'var(--text-pop)', fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{s.category}</h3>
                   </div>
                   <motion.div variants={stagger(0.1)} initial="hidden" whileInView="show" viewport={{ once: true }} className="pop-out" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
                     {s.items.map((item, idxx) => {
@@ -580,7 +613,7 @@ function Skills() {
                         <motion.span variants={fadeUp} key={item} className="tech-tag" style={{ borderLeft: `3px solid ${s.color}`, position: 'relative' }}>
                           {item}
                           {isPrimary && (
-                            <span style={{ marginLeft: '6px', fontSize: '9px', color: '#fff', background: s.color, padding: '2px 4px', borderRadius: '3px', filter: `drop-shadow(0 0 4px ${s.color})` }}>
+                            <span style={{ marginLeft: '6px', fontSize: '9px', color: 'var(--text-pop)', background: s.color, padding: '2px 4px', borderRadius: '3px', filter: `drop-shadow(0 0 4px ${s.color})` }}>
                               [ PRIMARY ]
                             </span>
                           )}
@@ -603,7 +636,7 @@ function Skills() {
                   <div style={{ width: 44, height: 44, borderRadius: '4px', background: `${softSkills.color}22`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: `1px solid ${softSkills.color}44` }}>
                     <softSkills.icon size={22} color={softSkills.color} style={{ filter: `drop-shadow(0 0 8px ${softSkills.color})` }} />
                   </div>
-                  <h3 style={{ color: '#fff', fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{softSkills.category}</h3>
+                  <h3 style={{ color: 'var(--text-pop)', fontSize: '1.3rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{softSkills.category}</h3>
                 </div>
                 <motion.div variants={stagger(0.1)} initial="hidden" whileInView="show" viewport={{ once: true }} className="pop-out" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                   {softSkills.items.map((item, idxx) => (
@@ -650,7 +683,7 @@ function Projects() {
                     <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
                       <span className="pop-out-extreme" style={{ fontSize: '3rem', filter: `drop-shadow(0 10px 10px rgba(0,0,0,0.8))` }}>{p.icon}</span>
                       <div>
-                        <h3 className="pop-out-extreme" style={{ fontSize: '1.5rem', color: '#fff', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{p.title}</h3>
+                        <h3 className="pop-out-extreme" style={{ fontSize: '1.5rem', color: 'var(--text-pop)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 8px rgba(0,0,0,0.8)' }}>{p.title}</h3>
                         <p style={{ fontSize: '0.85rem', color: p.color, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px' }}>{p.subtitle}</p>
                       </div>
                     </div>
@@ -682,8 +715,8 @@ function Projects() {
                     </div>
                   </div>
 
-                  <div className="pop-out" style={{ padding: '1.5rem 2rem', background: 'rgba(0,0,0,0.6)', borderTop: `1px solid rgba(255,255,255,0.1)`, display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-                    <a href={p.github} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#fff', fontSize: '0.85rem', fontWeight: 900, textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '4px' }}>
+                  <div className="pop-out" style={{ padding: '1.5rem 2rem', background: 'var(--glass-card-inner)', borderTop: `1px solid rgba(255,255,255,0.1)`, display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                    <a href={p.github} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'var(--text-pop)', fontSize: '0.85rem', fontWeight: 900, textTransform: 'uppercase', background: 'rgba(255,255,255,0.1)', padding: '0.4rem 0.8rem', borderRadius: '4px' }}>
                       <Github size={16} /> GitHub
                     </a>
                   </div>
@@ -715,13 +748,13 @@ function Education() {
                   <div className="glass-card-inner"></div>
                   <div className="pop-out" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
                     <div>
-                      <h4 className="pop-out-extreme" style={{ color: '#fff', fontSize: '1.3rem', fontWeight: 900, marginBottom: '0.5rem', textTransform: 'uppercase', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>{ed.degree}</h4>
+                      <h4 className="pop-out-extreme" style={{ color: 'var(--text-pop)', fontSize: '1.3rem', fontWeight: 900, marginBottom: '0.5rem', textTransform: 'uppercase', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>{ed.degree}</h4>
                       <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '1rem', marginBottom: '0.5rem', letterSpacing: '1px' }}>{ed.field}</div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>{ed.school}</div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{ed.location}</div>
                     </div>
                     <div className="pop-out-extreme" style={{ textAlign: 'right' }}>
-                      <div style={{ padding: '0.5rem 1.2rem', background: 'rgba(0,0,0,0.5)', border: '1px solid var(--primary)', borderRadius: '4px', color: 'var(--primary)', fontWeight: 900, fontSize: '0.9rem', marginBottom: '0.8rem', display: 'inline-block', boxShadow: '0 5px 15px rgba(0,0,0,0.8)' }}>{ed.grade}</div>
+                      <div style={{ padding: '0.5rem 1.2rem', background: 'var(--glass-card-inner)', border: '1px solid var(--primary)', borderRadius: '4px', color: 'var(--primary)', fontWeight: 900, fontSize: '0.9rem', marginBottom: '0.8rem', display: 'inline-block', boxShadow: '0 5px 15px rgba(0,0,0,0.8)' }}>{ed.grade}</div>
                       <div style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 800, letterSpacing: '1px' }}>{ed.period}</div>
                     </div>
                   </div>
@@ -752,7 +785,7 @@ function Training() {
 
               <div className="pop-out-extreme" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem', borderBottom: '2px solid rgba(255,255,255,0.1)', paddingBottom: '2.5rem' }}>
                 <div>
-                  <h3 style={{ color: '#fff', fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>{TRAINING.company}</h3>
+                  <h3 style={{ color: 'var(--text-pop)', fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>{TRAINING.company}</h3>
                   <p style={{ color: 'var(--primary)', fontSize: '1.2rem', fontWeight: 800, marginTop: '0.5rem', letterSpacing: '1px' }}>{TRAINING.role}</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'flex-end' }}>
@@ -791,7 +824,7 @@ function Training() {
                   <div className="glass-card-inner"></div>
 
                   <div className="pop-out-extreme">
-                    <h4 style={{ color: '#fff', fontSize: '1.2rem', fontWeight: 900, textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>{cert.name}</h4>
+                    <h4 style={{ color: 'var(--text-pop)', fontSize: '1.2rem', fontWeight: 900, textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>{cert.name}</h4>
                     <div style={{ color: cert.color, fontSize: '0.9rem', fontWeight: 800, letterSpacing: '1px', marginTop: '6px' }}>{cert.org}</div>
                   </div>
 
@@ -841,8 +874,8 @@ function Contact() {
 
               {/* Terminal Readout inside Contact Box */}
               <div className="pop-out" style={{ background: 'transparent', padding: '2rem 2rem 0', textAlign: 'left', marginBottom: '4rem', fontFamily: 'monospace', border: 'none', fontSize: '1.25rem', lineHeight: '2.2' }}>
-                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{'>'} NAME: <span style={{ color: '#fff' }}>Siva Narasimha Abhinav D</span></div>
-                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{'>'} GMAIL: <span style={{ color: '#fff' }}>{PERSONAL.email}</span></div>
+                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{'>'} NAME: <span style={{ color: 'var(--text-pop)' }}>Siva Narasimha Abhinav D</span></div>
+                <div style={{ color: 'var(--primary)', marginBottom: '1rem' }}>{'>'} GMAIL: <span style={{ color: 'var(--text-pop)' }}>{PERSONAL.email}</span></div>
                 <div style={{ color: 'var(--primary)', display: 'flex', alignItems: 'center' }}>{'>'} STATUS: <span style={{ color: 'var(--accent)', marginLeft: '12px' }}>[ ACTIVELY SEEKING ]</span> <span style={{ width: 12, height: 12, background: 'var(--accent)', borderRadius: '50%', marginLeft: 15, animation: 'blink 1s infinite', display: 'inline-block' }} /></div>
               </div>
 
@@ -898,7 +931,7 @@ export default function App() {
         <Education />
         <Contact />
       </main>
-      <footer style={{ width: '100%', padding: '4rem 0 3rem 0', textAlign: 'center', backgroundColor: '#020202', borderTop: '2px solid rgba(0, 255, 255, 0.15)', marginTop: '2rem', zIndex: 10, position: 'relative' }}>
+      <footer style={{ width: '100%', padding: '4rem 0 3rem 0', textAlign: 'center', backgroundColor: 'var(--dark-to-light-bg)', borderTop: '2px solid rgba(0, 255, 255, 0.15)', marginTop: '2rem', zIndex: 10, position: 'relative' }}>
         <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}>
           <div style={{ color: 'var(--text-muted)', fontFamily: 'monospace', fontSize: '0.9rem', letterSpacing: '1px' }}>
             © 2026 Siva Narasimha Abhinav D. All Rights Reserved.
