@@ -49,9 +49,9 @@ const PERSONAL = {
   linkedin: 'https://www.linkedin.com/in/abhinav-dsn',
   location: 'Phagwara, Punjab',
   role: 'B.Tech CSE (AI & ML) @ LPU',
-  cgpa: '7.71',
+  cgpa: '7.75',
   tagline: 'I build smart systems.',
-  education_string: 'B.Tech CSE (AI & ML) @ Lovely Professional University · CGPA: 7.71'
+  education_string: 'B.Tech CSE (AI & ML) @ Lovely Professional University · CGPA: 7.75'
 }
 
 const PRIMARY_SKILLS = ['Python', 'Django']
@@ -143,16 +143,16 @@ const PROJECTS = [
 ]
 
 const EDUCATION = [
-  { degree: 'Bachelor of Technology', field: 'CSE (AI & ML)', school: 'Lovely Professional University', location: 'Phagwara, Punjab', period: 'Aug 2023 – Present', grade: '7.71 / 10 (Ongoing)', icon: '🎓' },
+  { degree: 'Bachelor of Technology', field: 'CSE (AI & ML)', school: 'Lovely Professional University', location: 'Phagwara, Punjab', period: 'Aug 2023 – Present', grade: '7.75 / 10 (Ongoing)', icon: '🎓' },
   { degree: 'Intermediate (MPC)', field: 'Class XII', school: 'Narayana Junior College', location: 'Proddatur, Andhra Pradesh', period: 'Sep 2021 – May 2023', grade: '95.8%', icon: '📚' },
   { degree: 'Matriculation', field: 'Class X (SSC)', school: 'Gautam High School', location: 'Proddatur, Andhra Pradesh', period: 'Jun 2020 – May 2021', grade: '100%', icon: '🏆' },
 ]
 
 const CERTS = [
+  { name: 'AWS Certified Machine Learning Engineer – Associate', org: 'AWS', date: 'May 2026', color: '#ff9900', link: 'https://drive.google.com/file/d/14XrxhMVMx440RDChz5LlEm0MCA7Iwblo/view' },
+  { name: 'Oracle Platform Certified Foundations Associate', org: 'Oracle', date: 'Mar 2026', color: '#c74634', link: 'https://drive.google.com/file/d/1bA7it_0GjMYXeriwgwTFDUhpVjqYRJSG/view' },
   { name: 'Master Generative AI & Generative AI Tools', org: 'Infosys SpringBoard', date: 'Aug 2025', color: '#00f0ff', link: 'https://drive.google.com/file/d/1Yd7ifyEPbZrS-3QVZt-R4jzmCwXTEJ4k/view' },
   { name: 'Computer Communications', org: 'Coursera', date: 'Nov 2024', color: '#00ccff', link: 'https://drive.google.com/file/d/1H1kqDkaM__yD98WTkI3GItDr9_556gA-/view' },
-  { name: 'Python Programming', org: 'CSE Pathshala', date: 'Mar 2024', color: '#00f0ff', link: 'https://drive.google.com/file/d/1TE18jPIkantsz3mM61C4U-ui-kt1u5JA/view' },
-  { name: 'Responsive Web Design', org: 'FreeCodeCamp', date: 'Dec 2023', color: '#00ccff', link: 'https://drive.google.com/file/d/14gYGBzOWcHo_swQH_WYMhYVJhGsmYaRN/view' },
 ]
 
 const TRAINING = {
@@ -167,6 +167,25 @@ const TRAINING = {
   ],
   fileLink: 'https://www.cipherschools.com/certificate/preview?id=6880d4867efd6d50907051be'
 }
+
+const EXTRA_CURRICULAR = [
+  {
+    title: 'Hackverse Hackathon',
+    description: '24-Hour intensive hackathon challenge — built and deployed a working project under time pressure.',
+    link: 'https://hackathon.hackverse.dev',
+    icon: '⚡',
+    color: '#f472b6',
+    date: null,
+  },
+  {
+    title: 'Dynamic Programming Camp',
+    description: 'Completed an intensive Dynamic Programming camp covering advanced optimization techniques with Algo-university.',
+    link: 'https://drive.google.com/file/d/100y1KNkpO_NCwgggRd4R75OvTGt8qIRk/view',
+    icon: '🧩',
+    color: '#818cf8',
+    date: null,
+  },
+]
 
 // ─── UNIQUE TECH UI COMPONENTS ───────────────────────────────────────────────
 
@@ -406,7 +425,7 @@ function Nav() {
     const h = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', h); return () => window.removeEventListener('scroll', h)
   }, [])
-  const links = ['About', 'Skills', 'Projects', 'Education', 'Training', 'Contact']
+  const links = ['About', 'Skills', 'Projects', 'Education', 'Training', 'Extracurricular', 'Contact']
 
   return (
     <nav style={{
@@ -420,10 +439,10 @@ function Nav() {
         <a href="#" style={{ fontWeight: 900, fontSize: '1.4rem' }}>
           Abhinav<span className="gradient-text">.dev</span>
         </a>
-        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
           {links.map(l => <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{'/' + l}</a>)}
           <ThemeToggle />
-          <a href="abhinav_cv.pdf" target="_blank" className="btn-primary" style={{ padding: '0.4rem 1.2rem', fontSize: '0.8rem' }}>[ RESUME ]</a>
+          <a href="https://drive.google.com/file/d/1di0Jr37louSikoDshSmDTz3C3O_cIHiH/view?usp=drive_link" target="_blank" className="btn-primary" style={{ padding: '0.4rem 1.2rem', fontSize: '0.8rem' }}>[ RESUME ]</a>
         </div>
       </div>
     </nav>
@@ -489,7 +508,7 @@ function Hero() {
 
           <motion.div variants={fadeUp} className="btn-container" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '3rem' }}>
             <a href="#projects" className="btn-primary" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px' }}>View Projects</a>
-            <motion.a href="abhinav_cv.pdf" target="_blank" className="btn-ghost" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px', borderColor: 'var(--secondary)', color: 'var(--text-pop)', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(176,38,255,0.4)', background: 'rgba(176,38,255,0.1)' }} transition={{ duration: 0.2 }}>[ RESUME ]</motion.a>
+            <motion.a href="https://drive.google.com/file/d/1di0Jr37louSikoDshSmDTz3C3O_cIHiH/view?usp=drive_link" target="_blank" className="btn-ghost" style={{ padding: '1.2rem 3rem', fontSize: '1rem', borderRadius: '50px', borderColor: 'var(--secondary)', color: 'var(--text-pop)', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(176,38,255,0.4)', background: 'rgba(176,38,255,0.1)' }} transition={{ duration: 0.2 }}>[ RESUME ]</motion.a>
           </motion.div>
 
           <motion.div variants={stagger(0.1)} className="social-btn-container" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginBottom: '4rem' }}>
@@ -564,7 +583,7 @@ function About() {
                 <motion.div variants={fadeUp} className="pop-out-extreme" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '1.5rem', borderTop: '2px solid rgba(255,255,255,0.1)', paddingTop: '2.5rem', marginTop: '2.5rem' }}>
                   {[
                     { id: 'SYS.DEGREE', val: 'B.Tech CSE (AI & ML)' },
-                    { id: 'INT.SCORE', val: '7.71 / 10 (Ongoing)' },
+                    { id: 'INT.SCORE', val: '7.75 / 10 (Ongoing)' },
                     { id: 'NODE.LOC', val: 'Punjab IN' },
                   ].map((r, i) => (
                     <div key={r.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
@@ -783,14 +802,14 @@ function Training() {
             <div className="glass-card" style={{ padding: '4rem', borderTop: '4px solid var(--primary)' }}>
               <div className="glass-card-inner"></div>
 
-              <div className="pop-out-extreme" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '3rem', borderBottom: '2px solid rgba(255,255,255,0.1)', paddingBottom: '2.5rem' }}>
+              <div className="pop-out-extreme" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.2rem', marginBottom: '3rem', borderBottom: '2px solid rgba(255,255,255,0.1)', paddingBottom: '2.5rem' }}>
                 <div>
                   <h3 style={{ color: 'var(--text-pop)', fontSize: '2rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}>{TRAINING.company}</h3>
                   <p style={{ color: 'var(--primary)', fontSize: '1.2rem', fontWeight: 800, marginTop: '0.5rem', letterSpacing: '1px' }}>{TRAINING.role}</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'flex-end' }}>
                   <span style={{ padding: '0.6rem 1.5rem', background: 'transparent', color: 'var(--primary)', border: '1px solid var(--primary)', borderRadius: '4px', fontWeight: 900, boxShadow: '0 0 10px rgba(0,255,255,0.2)' }}>{TRAINING.date}</span>
-                  <motion.a href={TRAINING.fileLink} target="_blank" className="btn-ghost" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', color: 'var(--primary)', borderColor: 'var(--primary)', background: 'transparent', borderRadius: '4px', display: 'flex', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,255,255,0.4)', background: 'rgba(0,255,255,0.1)' }} transition={{ duration: 0.2 }}>
+                  <motion.a href={TRAINING.fileLink} target="_blank" className="btn-ghost" style={{ padding: '0.5rem 1rem', fontSize: '0.78rem', letterSpacing: '0.5px', color: 'var(--primary)', borderColor: 'var(--primary)', background: 'transparent', borderRadius: '4px', display: 'flex', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,255,255,0.4)', background: 'rgba(0,255,255,0.1)' }} transition={{ duration: 0.2 }}>
                     <Award size={16} /> [ CERTIFICATE ]
                   </motion.a>
                 </div>
@@ -845,6 +864,40 @@ function Training() {
   )
 }
 
+// ─── EXTRA CURRICULAR ─────────────────────────────────────────────────────────
+function ExtraCurricular() {
+  return (
+    <section id="extracurricular" className="section">
+      <div className="container" style={{ maxWidth: '900px' }}>
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <span className="section-badge">[ BEYOND THE CODE ]</span>
+          <h2 className="section-title"><TextDecrypt text="Extra Curricular" speed={30} /></h2>
+        </motion.div>
+
+        <motion.div variants={stagger(0.2)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.1 }} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {EXTRA_CURRICULAR.map((item, i) => (
+            <motion.div variants={fadeLeft} key={i}>
+              <Tilt tiltMaxAngleX={8} tiltMaxAngleY={8} perspective={800} transitionSpeed={1000} scale={1.03}>
+                <div className="glass-card" style={{ padding: '2.5rem', borderLeft: `4px solid ${item.color}`, display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <div className="glass-card-inner"></div>
+                  <div className="pop-out-extreme" style={{ fontSize: '3rem', filter: `drop-shadow(0 8px 12px rgba(0,0,0,0.7))` }}>{item.icon}</div>
+                  <div className="pop-out" style={{ flex: 1 }}>
+                    <h4 style={{ color: 'var(--text-pop)', fontSize: '1.3rem', fontWeight: 900, marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px', textShadow: '0 2px 5px rgba(0,0,0,0.8)' }}>{item.title}</h4>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.7 }}>{item.description}</p>
+                  </div>
+                  <a href={item.link} target="_blank" className="btn-ghost pop-out" style={{ padding: '0.5rem 1rem', fontSize: '0.8rem', color: item.color, borderColor: item.color, borderRadius: '4px', display: 'flex', alignItems: 'center', gap: '0.5rem', whiteSpace: 'nowrap' }}>
+                    <ExternalLink size={14} /> [ EXPLORE ]
+                  </a>
+                </div>
+              </Tilt>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
 // ─── CONTACT ──────────────────────────────────────────────────────
 function Contact() {
   return (
@@ -886,7 +939,7 @@ function Contact() {
                 <a href={PERSONAL.github} target="_blank" className="btn-ghost" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>
                   <Github size={20} /> [ REPO: GITHUB ]
                 </a>
-                <motion.a href="abhinav_cv.pdf" target="_blank" className="btn-ghost" style={{ padding: '1rem 2rem', fontSize: '1rem', color: 'var(--primary)', borderColor: 'var(--primary)', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,255,255,0.4)', background: 'rgba(0,255,255,0.1)' }} transition={{ duration: 0.2 }}>
+                <motion.a href="https://drive.google.com/file/d/1di0Jr37louSikoDshSmDTz3C3O_cIHiH/view?usp=drive_link" target="_blank" className="btn-ghost" style={{ padding: '1rem 2rem', fontSize: '1rem', color: 'var(--primary)', borderColor: 'var(--primary)', background: 'transparent', display: 'flex', alignItems: 'center', gap: '0.5rem' }} whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0,255,255,0.4)', background: 'rgba(0,255,255,0.1)' }} transition={{ duration: 0.2 }}>
                   <Download size={20} /> [ RESUME ]
                 </motion.a>
               </div>
@@ -929,6 +982,7 @@ export default function App() {
         <Projects />
         <Training />
         <Education />
+        <ExtraCurricular />
         <Contact />
       </main>
       <footer style={{ width: '100%', padding: '4rem 0 3rem 0', textAlign: 'center', backgroundColor: 'var(--dark-to-light-bg)', borderTop: '2px solid rgba(0, 255, 255, 0.15)', marginTop: '2rem', zIndex: 10, position: 'relative' }}>

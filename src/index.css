@@ -235,7 +235,7 @@ ul { list-style:none; }
 }
 
 /* ── NAV LINK ── */
-.nav-link { color:var(--text-muted);font-weight:600;font-size:0.95rem;transition:all 0.3s; text-transform:uppercase; letter-spacing:1px;}
+.nav-link { color:var(--text-muted);font-weight:600;font-size:0.78rem;transition:all 0.3s; text-transform:uppercase; letter-spacing:0.5px;}
 .nav-link:hover { color:var(--primary); text-shadow:0 0 10px var(--primary); }
 
 /* ── TECH TAG ── */

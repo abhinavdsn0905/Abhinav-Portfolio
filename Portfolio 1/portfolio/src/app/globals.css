@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --border: #1a1a1a;
+  --accent: #00e5ff;
+  --accent-dim: #00b4cc;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Glow text utility */
+.glow-text {
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+/* Accent gradient */
+.accent-gradient {
+  background: linear-gradient(135deg, #00e5ff 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 229, 255, 0.2);
+  color: #fff;
+}
